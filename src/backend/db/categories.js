@@ -8,20 +8,23 @@ import { v4 as uuid } from "uuid";
 export const categories = [
   {
     _id: uuid(),
-    categoryName: "fiction",
+    categoryName: "Analog",
+    image:"https://res.cloudinary.com/dn5zs5sqx/image/upload/v1684241560/fossilAnalog_fd85rj.webp",
     description:
-      "literature in the form of prose, especially novels, that describes imaginary events and people",
+      "Timeless elegance with classic analog dials and traditional watch hands.",
   },
   {
     _id: uuid(),
-    categoryName: "non-fiction",
+    categoryName: "Digital",
+    image:"https://res.cloudinary.com/dn5zs5sqx/image/upload/v1684241345/casioDigital_u1pdu4.webp",
     description:
-      "Non-fiction is writing that gives information or describes real events, rather than telling a story.",
+      "Modern and precise timekeeping with digital displays and advanced functionality.",
   },
   {
     _id: uuid(),
-    categoryName: "horror",
+    categoryName: "Smartwatch",
+    image:"https://res.cloudinary.com/dn5zs5sqx/image/upload/v1684224476/applewatch_xsywrb.jpg",
     description:
-      "Meant to cause discomfort and fear for both the character and readers, horror writers often make use of supernatural and paranormal elements in morbid stories that are sometimes a little too realistic.",
+      "Watch with various features like fitness tracking, notifications, and connectivity.",
   },
 ];
