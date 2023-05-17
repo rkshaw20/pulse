@@ -1,13 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 
 :root {
   --primary-color: #3b82f6;
   --secondary-color: white;
+  --background-color:#eff6ff;
   --primary-font: "Playfair Display", serif;
 
   /* --text-color:; */
   /* --text-color: #091f5c; */
+}
+
+.home{
+  background-color:var(--background-color);
+  /* padding-bottom: 0;
+  margin-bottom: 0; */
 }
 
 .header {
@@ -83,12 +91,23 @@
   align-items: center;
   height: 70vh;
   width: 100vw;
+  position: relative;
 }
+.banner::after{
+  content:"";
+  position:absolute;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  background:rgba(0,0,0,0.5);
+  }
 
 .banner-text {
   text-align: left;
   margin-left: 10%;
-  background-color: rgba(226, 222, 222,.2);
+  position: relative;
+  z-index: 10;
 }
 
 .banner-text > p {
@@ -96,13 +115,16 @@
   color: var(--secondary-color);
   font-size: 22px;
   font-weight: 500;
+
 }
 
 .banner-btn {
   color: white;
   border: 2px solid var(--primary-color);
   background-color: var(--primary-color);
+  font-family:  'Rubik', sans-serif;
   font-size: 1.2rem;
+  text-decoration: none;
   border-radius: 0.5rem;
   padding: 0.2rem 1rem;
   letter-spacing: 0.1rem;
@@ -134,6 +156,7 @@
 }
 
 .category-card {
+  background-color: white;
   border: 2px solid var(--primary-color);
   border-radius: .5rem;
   padding: 0.5rem;
@@ -148,6 +171,7 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Customize the shadow properties */
 }
 .category-card > img {
+  
   height: 10rem;
 }
 .category-title {

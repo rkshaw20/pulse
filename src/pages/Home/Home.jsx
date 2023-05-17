@@ -1,4 +1,6 @@
-import Header from "../../components/Header"
+
+import {Link} from 'react-router-dom'
+
 import './Home.css' 
 import {categories} from '../../backend/db/categories'
 import CategoryCard from "../../components/CategoryCard"
@@ -6,13 +8,12 @@ import CategoryCard from "../../components/CategoryCard"
 
 const Home=()=>{
     return(
-        <div>
-            <Header/>
+        <div className='home'>
             <div className="banner">
                <div className="banner-text">
                 <p>Welcome to Pulse,</p>
                 <p>Elevate Your Style With Our Irresistible Collection.</p>
-                <button className="banner-btn">Shop</button>
+                <Link to='/productPage' className="banner-btn">Shop</Link>
                </div>
             </div>
             <p className="category">Shop By Category</p>
