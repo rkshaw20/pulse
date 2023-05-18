@@ -1,4 +1,5 @@
 import "./ProductFilterBar.css";
+import StarIcon from "@mui/icons-material/Star";
 
 const ProductFilterBar = () => {
   return (
@@ -7,7 +8,7 @@ const ProductFilterBar = () => {
         <p>
         <b>Filters</b>{" "}</p>
         
-          <p className="clear-filter-btn">Clear</p>
+          <p className="clear-filter-btn">Reset</p>
         
      
         </div>
@@ -58,16 +59,16 @@ const ProductFilterBar = () => {
             <b>Rating</b>
           </legend>
           <label htmlFor="1 star">
-            <input type="radio" name="star" id="1 star" />1 star &above
+            <input type="radio" name="star" id="1 star" />1 <StarIcon/> & up
           </label>
           <label htmlFor="2 star">
-            <input type="radio" name="star" id="2 star" />2 star &above
+            <input type="radio" name="star" id="2 star" />2 <StarIcon/> & up
           </label>
           <label htmlFor="3 star">
-            <input type="radio" name="star" id="3 star" />3 star &above
+            <input type="radio" name="star" id="3 star" />3 <StarIcon/> & up
           </label>
           <label htmlFor="4 star">
-            <input type="radio" name="star" id="4 star" />4 star &above
+            <input type="radio" name="star" id="4 star" />4 <StarIcon/> & up
           </label>
         </fieldset>
       </div>

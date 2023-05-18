@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import SearchIcon from "@mui/icons-material/Search";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
@@ -7,7 +9,7 @@ const Header = () => {
   return (
     <div className="header">
 
-      <div className="nav left"><span>Pulse.</span></div>
+      <div className="nav left"><Link to='/' className="main-title">Pulse.</Link></div>
 
       <div className="search-container">
         <div className="search-icon">

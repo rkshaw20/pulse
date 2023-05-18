@@ -3,13 +3,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 
 :root {
-  --primary-color: #3b82f6;
+  --primary-color: rgb(97, 122, 85);
+  /* --primary-color: #3b82f6; */
   --secondary-color: white;
-  --background-color:#eff6ff;
+  --background-color:rgb(214, 224, 209);
   --primary-font: "Playfair Display", serif;
-
-  /* --text-color:; */
-  /* --text-color: #091f5c; */
 }
 
 .home{
@@ -36,7 +34,10 @@
   padding-bottom: 0.5rem;
   /* padding: 1rem; */
 }
-
+.main-title{
+  text-decoration: none;
+  color: var(--secondary-color);
+}
 .nav {
   height: 40px;
   color: var(--secondary-color);

@@ -8,8 +8,8 @@
 export const products = [
     {
       _id: "T1206073704100",
-      image: "https://res.cloudinary.com/dn5zs5sqx/image/upload/v1684003034/The_Tissot_Seastar_1000_fzlbcp.jpg",
-      category: "analog",
+      image: "https://res.cloudinary.com/dn5zs5sqx/image/upload/v1684398099/T067.417.11.031.01_R_ktgfch.png",
+      category: "Analog",
       rating: "3.9",
       description:
         "The Tissot Seastar 1000 is the ultimate watersport watch, with its high water-resistance up to a pressure of 30 bar (300 m/1000 ft), screw-down crown and caseback as well as its unidirectional bezel.",
@@ -26,7 +26,7 @@ export const products = [
     {
       _id: "A2345678901234",
       image: "https://res.cloudinary.com/dn5zs5sqx/image/upload/v1684003146/The_Citizen_Eco-Drive_k2er15.jpg",
-      category: "analog",
+      category: "Analog",
       rating: "4.5",
       description:
         "The Citizen Eco-Drive is a solar-powered watch that never needs a battery change. It features a stainless steel case and bracelet, date function, and water resistance up to 100 meters.",
@@ -42,7 +42,7 @@ export const products = [
     {
       _id: "A345678901234",
       image: "https://res.cloudinary.com/dn5zs5sqx/image/upload/v1684003240/The_Seiko_Prospex_Samurai_x7nr06.jpg",
-      category: "analog",
+      category: "Analog",
       rating: "4.8",
       description:
         "The Seiko Prospex Samurai is a rugged dive watch built for adventure. It features a stainless steel case, automatic movement, unidirectional rotating bezel, and luminous hands and markers.",
@@ -58,7 +58,7 @@ export const products = [
     {
       _id: "A456789012345",
       image: "https://res.cloudinary.com/dn5zs5sqx/image/upload/v1684003440/samples/ecommerce/The_Hamilton_Khaki_Field_Mechanical_ibkq2o.jpg",
-      category: "analog",
+      category: "Analog",
       rating: "4.3",
       description:
         "The Hamilton Khaki Field Mechanical is a classic military-style watch. It features a stainless steel case, hand-wound mechanical movement, black dial with luminescent hands, and a canvas strap.",
@@ -74,7 +74,7 @@ export const products = [
     {
       _id: "A567890123456",
       image: "https://res.cloudinary.com/dn5zs5sqx/image/upload/v1684003502/samples/ecommerce/The_Bulova_Precisionist_efjueo.jpg",
-      category: "analog",
+      category: "Analog",
       rating: "4.6",
       description:
         "The Bulova Precisionist is known for its accuracy, with a continuously sweeping second hand. It features a stainless steel case, quartz movement, date function, and a black leather strap.",
@@ -90,7 +90,7 @@ export const products = [
     {
       _id: "A6789012345678",
       image: "https://res.cloudinary.com/dn5zs5sqx/image/upload/v1684003551/samples/ecommerce/The_Orient_Bambino_c3csbw.webp",
-      category: "analog",
+      category: "Analog",
       rating: "4.2",
       description:
         "The Orient Bambino is a stylish dress watch with a classic design. It features a stainless steel case, automatic movement, domed mineral crystal, and a brown leather strap.",
@@ -106,7 +106,7 @@ export const products = [
     {
       _id: "A1234567890123",
       image: "https://res.cloudinary.com/dn5zs5sqx/image/upload/v1684003664/samples/ecommerce/The_Omega_Seamaster_Diver_fkleml.png",
-      category: "analog",
+      category: "Analog",
       rating: "4.7",
       description:
         "The Omega Seamaster Diver 300M is a legendary dive watch with a rich heritage. It features a stainless steel case, automatic movement, ceramic bezel, and water resistance up to 300 meters.",
@@ -122,7 +122,7 @@ export const products = [
     {
       _id: "A234567890123",
       image: "https://res.cloudinary.com/dn5zs5sqx/image/upload/v1684003734/samples/ecommerce/The_TAG_Heuer_Carrera_eigh17.jpg",
-      category: "analog",
+      category: "Analog",
       rating: "4.5",
       description:
         "The TAG Heuer Carrera is a classic chronograph watch known for its sporty elegance. It features a stainless steel case, automatic movement, tachymeter scale, and a black leather strap.",
@@ -138,7 +138,7 @@ export const products = [
     {
       _id: "A3456789012345",
       image: "https://res.cloudinary.com/dn5zs5sqx/image/upload/v1684003787/samples/ecommerce/The_Breitling_Navitimer_o8vnkd.jpg",
-      category: "analog",
+      category: "Analog",
       rating: "4.8",
       description:
         "The Breitling Navitimer is a legendary pilot watch with a distinctive slide rule bezel. It features a stainless steel case, automatic movement, chronograph function, and a stainless steel bracelet.",
@@ -154,7 +154,7 @@ export const products = [
     {
       _id: "A4567890123456",
       image: "https://res.cloudinary.com/dn5zs5sqx/image/upload/v1684003949/samples/ecommerce/rolex_oofsvu.jpg",
-      category: "analog",
+      category: "Analog",
       rating: "4.3",
       description:
         "The Rolex Datejust is an iconic dress watch with a timeless design. It features a stainless steel case, automatic movement, date function, and a Jubilee bracelet.",
@@ -170,7 +170,7 @@ export const products = [
     {
       _id: "A5678901234567",
       image: "https://res.cloudinary.com/dn5zs5sqx/image/upload/v1684003998/samples/ecommerce/The_Patek_Philippe_Nautilu_sefnl6.webp",
-      category: "analog",
+      category: "Analog",
       rating: "4.6",
       description:
         "The Patek Philippe Nautilus is a luxury sports watch with a distinctive octagonal case. It features a stainless steel case, automatic movement, date function, and a blue dial with luminescent hands.",

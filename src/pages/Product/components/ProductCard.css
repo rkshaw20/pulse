@@ -1,35 +1,102 @@
+.productCard {
+   
+  /* border: 2px solid yellow; */
+  height: 23rem;
+  width: 20rem;
+  background-color: whitesmoke;
+  position: relative;
+  padding: 1rem;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+  cursor: pointer;
 
-
-.productCard{
-    border: 2px solid yellow;
-    height: 30rem;
-    background-color: white;
-    position: relative;
 }
 
-.card-image{
-    width: 100%;
-    height: 15rem ;
-    object-fit: contain;
+.card-image {
+  width: 100%;
+  height: 15rem;
+  object-fit: contain;
+  /* color: inherit; */
+  mix-blend-mode: multiply;
+
 }
 
-.card-trending{
-    position: absolute;
+.card-trending {
+  position: absolute;
   top: 0;
   left: 0;
-  background-color: rgba(255, 162, 0, 0.8); /* Example background color */
+  border-top-left-radius: 1.2rem;
+  background-color: rgba(255, 0, 0, 0.8); /* Example background color */
   color: #fff; /* Example text color */
-  padding: 5px 10px; /* Example padding */
+  padding: .3rem .8rem; /* Example padding */
 }
 
 .wishlist-icon {
-    position: absolute;
-    top: 0;
-    right: 0;
-    color: lightgray; /* Example icon color */
-    padding: 5px; /* Example padding */
-  }
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: lightgray; /* Example icon color */
+  padding: 5px; /* Example padding */
+}
 
-  .wishlist-icon:hover{
-    color: #ff0000;
-  }
+.wishlist-icon:hover {
+  fill: #ff0000;
+}
+
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-title{
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+.card-rating{
+    background-color: #26a541;
+    font-size: 1rem;
+    padding: .1rem;
+    color: white;
+    border-radius: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-price{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: .2rem;
+    gap: .5rem;
+}
+
+.discount-price, .original-price{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+}
+.original-price{
+    text-decoration: line-through;
+}
+
+.add-to-cart-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: 1.5rem;
+    background-color: orange ;
+    border: rgb(210, 128, 12);
+    border-radius: 2.5rem;
+    cursor: pointer;
+   
+}
+
+.add-to-cart-btn:hover{
+    background-color: rgb(249, 163, 3);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s;
+}

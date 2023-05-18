@@ -12,7 +12,17 @@ gap: 0 3rem;
 }
 
 .productList{
-    /* height: 200vh; */
-    /* background-color: black; */
-    border: 2px solid black;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 1rem;
 }
+
+/* @media (min-width: 600px) {
+    .productList{
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+  } */
+
+
+  
