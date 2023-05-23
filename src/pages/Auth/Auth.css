@@ -48,6 +48,13 @@
 .login-btn {
   margin-top: 0.8rem;
 }
+.login-guest-btn{
+  display: flex;
+  justify-content: center;
+  margin-left: 2rem;
+  text-align: center;
+  width: 13.7rem;
+}
 
 
 /* signup */

@@ -18,7 +18,7 @@ export const signUpService= async (userData)=>{
 
 
 export const loginService= async(userData)=>{
-    console.log(userData)
+    // console.log(userData)
     const response=await axios.post('/api/auth/login',{...userData});
 // console.log(response)
     const {firstName,lastName,email}=response.data.foundUser;

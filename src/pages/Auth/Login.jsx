@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import "./Auth.css";
 import { useAuthContext } from "../../contexts/AuthContextProvider";
@@ -12,10 +12,13 @@ const intialLoginState = { email: "", password: "" };
 
 export const Login = () => {
   const { setUser } = useAuthContext();
-
+ 
   const navigate = useNavigate();
+  const location=useLocation();
 
   const [userInput, setUserInput] = useState(intialLoginState);
+ 
+  const redirectPath=location.state?.path || '/';
 
   const handleGuestInput=(e)=>{
     setUserInput(guestUser)
@@ -24,7 +27,6 @@ export const Login = () => {
 
   const handleUserInput = (e) => {
     setUserInput({ ...userInput, [e.target.name]: e.target.value });
-    // console.log({ ...userInput, [e.target.name]: e.target.value })
   };
 
   const loginSubmit = async (e, loginDetails) => {
@@ -38,7 +40,7 @@ export const Login = () => {
 
       setLocalStorage(localStorageKeys.User, data);
 
-      navigate("/");
+      navigate(redirectPath, {replace:true});
     } catch (error) {
       console.log(error);
     }

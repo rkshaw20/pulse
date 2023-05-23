@@ -8,7 +8,7 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 const Header = () => {
   const navigate=useNavigate()
 
-  const handleUserClick=()=>{navigate('/userProfile')}
+  // const handleUserClick=()=>{}
   return (
     <div className="header">
       <div className="nav left">
@@ -33,13 +33,13 @@ const Header = () => {
           </Link>
         </div>
 
-        <div>
+        <div onClick={()=>navigate('/cart')}>
           <ShoppingBagIcon className="nav nav-bag" />
         </div>
-        <div className="userProfileIcon" onClick={handleUserClick}>
+        <div className="userProfileIcon" onClick={()=>navigate('/userProfile')}>
           <AccountBoxIcon className="nav nav-userProfile" />
         </div>
-        <div>
+        <div onClick={()=>navigate('/wishlist')}>
           <FavoriteBorderIcon className="nav nav-wishlist" />
         </div>
       </div>
