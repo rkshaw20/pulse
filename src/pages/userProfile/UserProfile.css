@@ -1,0 +1,60 @@
+.profile-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.profile-container {
+  /* border: 2px solid red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: whitesmoke;
+  padding: 10px;
+  margin-top: 2rem;
+  height: fit-content;
+  width: 40%;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 1.3rem;
+}
+.profile-details-header{
+    display: flex;
+    justify-content: space-between;
+}
+.profile-details > p {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: .5rem;
+  font-size: 1.2rem;
+}
+
+
+.address-btn{
+    cursor: pointer;
+    padding: .5rem;
+    margin: .5rem;
+    border-radius:.5rem ;
+    /* font-size: 1rem; */
+
+}
+
+.address-btn:hover{
+    background-color: #617a55;
+    color: white;
+    border: whi;
+}
+
+
+.logout-btn button {
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.logout-btn button:hover {
+  background-color: #d32f2f;
+}
