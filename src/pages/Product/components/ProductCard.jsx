@@ -4,6 +4,7 @@ import "./ProductCard.css";
 
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import StarIcon from "@mui/icons-material/Star";
+import { getPercentageOff } from "../../../utils/productUtils";
 
 
 
@@ -26,7 +27,7 @@ const ProductCard = ({ product }) => {
 
   const navigate=useNavigate();
 
-  const percentageOff = Math.ceil(((base_price - price) / base_price) * 100) ;
+  const percentageOff = getPercentageOff(base_price,price) ;
   return (
     <div  className="productCard">
       <img className="card-image" src={image} alt={title} 

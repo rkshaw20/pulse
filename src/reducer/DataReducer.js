@@ -1,6 +1,6 @@
 import { TYPE } from "../utils/constants";
 
-export const dataInitaialState = {
+export const dataInitialState = {
   products: [],
   categories: [],
 };

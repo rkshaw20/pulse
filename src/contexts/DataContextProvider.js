@@ -1,18 +1,18 @@
 import { useReducer } from "react";
 import { createContext,useContext } from "react";
-import { dataReducer, dataInitaialState } from "../reducer/DataReducer";
+import { dataReducer, dataInitialState } from "../reducer/DataReducer";
 import axios from "axios";
 import { useEffect } from "react";
 
 
 
-const DataContext=createContext();
+const DataContext=createContext({products:[]});
 
 export const useDataContext = () => useContext(DataContext);
 
 
 const DataContextProvider=({children})=>{
-    const [state,dispatch]=useReducer(dataReducer,dataInitaialState);
+    const [state,dispatch]=useReducer(dataReducer,dataInitialState);
 
     useEffect(()=>{
         getProducts();
@@ -32,8 +32,10 @@ const DataContextProvider=({children})=>{
     }
 
     return(
-        <DataContextProvider.Provider value={{products:state.products}}>
-            {children}
-        </DataContextProvider.Provider>
+     <DataContext.Provider value={{products:state.products}}>
+        {children}
+     </DataContext.Provider>
     )
 }
+
+export default DataContextProvider;

@@ -1,11 +1,13 @@
+import { useDataContext } from '../../contexts/DataContextProvider';
 import './ProductPage.css'
 import ProductCard from './components/ProductCard';
 import ProductFilterBar from './components/ProductFilterBar';
-import { products } from '../../backend/db/products';
 
-// const data=products[1]
-console.log(products);
 const ProductPage = () => {
+
+const {products}=useDataContext();
+// console.log('raj')
+  console.log(products);
   return (
     <div className="productPage">
       <div className="product-filter">
