@@ -11,6 +11,7 @@ const {products}=useDataContext();
 const {appliedFilters}=useFilterContext()
 
 const filteredProduct=getFilteredProducts(products,appliedFilters);
+
   return (
        <div className="productPage">
       <div className="product-filter">

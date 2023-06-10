@@ -2,11 +2,12 @@
 import {Link} from 'react-router-dom'
 
 import './Home.css' 
-import {categories} from '../../backend/db/categories'
 import CategoryCard from "../../components/CategoryCard"
+import { useDataContext } from '../../contexts/DataContextProvider'
 
 
 const Home=()=>{
+    const {categories}=useDataContext();
     return(
         <div className='home'>
             <div className="banner">

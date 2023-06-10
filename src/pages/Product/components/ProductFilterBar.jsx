@@ -1,33 +1,51 @@
+import { useState } from "react";
+import { useFilterContext } from "../../../contexts/FIlterContextProvider";
+import { TYPE } from "../../../utils/constants";
 import "./ProductFilterBar.css";
 import StarIcon from "@mui/icons-material/Star";
+import { useDataContext } from "../../../contexts/DataContextProvider";
 
 const ProductFilterBar = () => {
+  const { categories } = useDataContext();
+  console.log(categories);
+  const { appliedFilters, dispatchFilter } = useFilterContext();
+
+  const rating = [1, 2, 3, 4];
+
+  const handleFilter = (e, filterType) =>
+    dispatchFilter({ type: filterType, payload: e.target.value });
+
   return (
     <div className="filter-container">
-        <div className="filter-head">
+      <div className="filter-head">
         <p>
-        <b>Filters</b>{" "}</p>
-        
-          <p className="clear-filter-btn">Reset</p>
-        
-     
-        </div>
-    
+          <b>Filters</b>{" "}
+        </p>
+
+        <p className="clear-filter-btn">Reset</p>
+      </div>
 
       {/* price filter */}
       <div className="filter-price">
-       
-        <fieldset >
+        <fieldset>
           <legend>
             {" "}
             <b>Price</b>{" "}
           </legend>
           <div className="price-range">
-            <p>2k</p>
+            <p>1k</p>
             <p>5k</p>
             <p>10k</p>
-        </div>
-          <input className="price" type="range" min="2000" max="10000" />
+          </div>
+          <input
+            className="price"
+            type="range"
+            min="1000"
+            max="10000"
+            step="100"
+            value={appliedFilters.priceFilter}
+            onChange={(e) => handleFilter(e, TYPE.PRICE_FILTER)}
+          />
         </fieldset>
       </div>
 
@@ -38,18 +56,21 @@ const ProductFilterBar = () => {
             {" "}
             <b>Category</b>
           </legend>
-          <label htmlFor="analog">
-            <input id="analog" type="checkbox" value="analog" />
-            Analog
-          </label>
-          <label htmlFor="digital">
-            <input id="digital" type="checkbox" value="digital" />
-            Digital
-          </label>
-          <label htmlFor="smartwatch">
-            <input id="smartwatch" type="checkbox" value="smartwatch" />
-            Smartwatch
-          </label>
+          {categories.map(({ categoryName }) => (
+            <label htmlFor={categoryName}>
+              <input
+                key={categoryName}
+                id={categoryName}
+                type="checkbox"
+                value={categoryName.toLowerCase()}
+                checked={appliedFilters.categoryFilter.includes(
+                  categoryName.toLowerCase()
+                )}
+                onChange={(e) => handleFilter(e, TYPE.CATEGORY_FILTER)}
+              />
+              {categoryName}
+            </label>
+          ))}
         </fieldset>
       </div>
       <div className="filter-rating">
@@ -58,18 +79,19 @@ const ProductFilterBar = () => {
             {" "}
             <b>Rating</b>
           </legend>
-          <label htmlFor="1 star">
-            <input type="radio" name="star" id="1 star" />1 <StarIcon/> & up
-          </label>
-          <label htmlFor="2 star">
-            <input type="radio" name="star" id="2 star" />2 <StarIcon/> & up
-          </label>
-          <label htmlFor="3 star">
-            <input type="radio" name="star" id="3 star" />3 <StarIcon/> & up
-          </label>
-          <label htmlFor="4 star">
-            <input type="radio" name="star" id="4 star" />4 <StarIcon/> & up
-          </label>
+          {rating.map((item) => (
+            <label htmlFor={item} key={item}>
+              <input
+                type="radio"
+                name="star"
+                value={item}
+                id={item}
+                checked={item === +appliedFilters.ratingFilter}
+                onChange={(e) => handleFilter(e, TYPE.RATING_FILTER)}
+              />
+              {item} <StarIcon /> & up{" "}
+            </label>
+          ))}
         </fieldset>
       </div>
     </div>

@@ -10,14 +10,11 @@ import { TYPE } from "../utils/constants";
 import { useEffect } from "react";
 
 const Header = () => {
-  const { appliedFilters, dispatchFilter } = useFilterContext();
+  const { dispatchFilter } = useFilterContext();
   const [search , setSearch] = useState("");
 
   const navigate = useNavigate();
   const location=useLocation();
-  // useEffect(()=>{
-  //   setSearch(appliedFilters.searchFilter)
-  // },[appliedFilters])
 
   useEffect(() => {
     let timer;
@@ -32,7 +29,6 @@ const Header = () => {
  
   const handleSearchChange = (e) => {
       setSearch(e.target.value);
-      dispatchFilter({ type: TYPE.SEARCH_FILTER, payload: search });
   };
 
   return (
