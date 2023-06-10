@@ -184,5 +184,130 @@ export const products = [
       stock_count: "20"
     },
   
-  
+    {
+      _id: "F7654321098765",
+      image: "https://res.cloudinary.com/dn5zs5sqx/image/upload/v1684224476/applewatch_xsywrb.jpg",
+      category: "smartwatch",
+      rating: "4.5",
+      description: "The apple Fitness Tracker Watch is a compact and feature-packed device. It offers step counting, calorie tracking, sleep monitoring, and a built-in GPS for outdoor activities.",
+      title: "Apple Watch",
+      trending: true,
+      base_price: "9000",
+      price: "7900",
+      delivery_time: "2",
+      reviews: "1.2k",
+      in_stock: true,
+      stock_count: "20"
+      }
+      ,
+      {
+        _id: "G5432109876543",
+        image: "https://res.cloudinary.com/dn5zs5sqx/image/upload/v1686246271/MQEP3ref_VW_PF_watch-49-titanium-ultra_VW_PF_WF_CO_watch-face-49-trail-ultra_VW_PF_WF_CO_GEO_IN_bwldra.jpg",
+        category: "smartwatch",
+        rating: "4.2",
+        description: "The Apple Titanium Smart Watch offers a range of smart features in a stylish design. It includes a touchscreen display, notifications for calls and messages, music control, and a long-lasting battery.",
+        title: "Apple Titanium Watch",
+        trending: false,
+        base_price: "9000",
+        price: "8790",
+        delivery_time: "4",
+        reviews: "500",
+        in_stock: true,
+        stock_count: "10"
+        }
+        ,
+        {
+        _id: "H2109876543210",
+        image: "https://res.cloudinary.com/dn5zs5sqx/image/upload/v1686246393/samsungwatch_kd7z7f.jpg",
+        category: "smartwatch",
+        rating: "4.9",
+        description: "The Samsung Smart Watch is a versatile timepiece suitable for any occasion. It features a sleek design, multiple time zone display, stopwatch functionality, and water resistance up to 50 meters.",
+        title: "Samsung Watch",
+        trending: true,
+        base_price: "7500",
+        price: "5290",
+        delivery_time: "3",
+        reviews: "2.5k",
+        in_stock: true,
+        stock_count: "18"
+        }
+        ,
+        {
+        _id: "I4321098765432",
+        image: "https://res.cloudinary.com/dn5zs5sqx/image/upload/v1686246680/boat_vvos7v.jpg",
+        category: "smartwatch",
+        rating: "4.3",
+        description: "The Boat Fitness Smartwatch is designed to support your active lifestyle. It offers advanced fitness tracking, built-in GPS, waterproof construction, and a color display for easy visibility.",
+        title: "Boat Fitness Smartwatch",
+        trending: true,
+        base_price: "2800",
+        price: "2490",
+        delivery_time: "6",
+        reviews: "1.8k",
+        in_stock: true,
+        stock_count: "5"
+        }
+        ,
+        {
+        _id: "J1098765432109",
+        image: "https://res.cloudinary.com/dn5zs5sqx/image/upload/v1686246692/firebolt_vihit7.jpg",
+        category: "smartwatch",
+        rating: "4.6",
+        description: "The Firebolt Smart Fitness Watch is your ultimate workout companion. It tracks your heart rate, provides exercise guidance, monitors sleep patterns, and offers a variety of sport modes.",
+        title: "Firebolt Fitness Watch",
+        trending: false,
+        base_price: "7600",
+        price: "5390",
+        delivery_time: "4",
+        reviews: "900",
+        in_stock: true,
+        stock_count: "14"
+        },
+        {
+          _id: "J1098765432122",
+          image: "https://res.cloudinary.com/dn5zs5sqx/image/upload/v1686247025/casioDigitalw_vdkug1.webp",
+          category: "digital",
+          rating: "3.6",
+          description: "The Casio Digital Watch is a timepiece that combines style and functionality. Featuring a sleek design, it offers a range of features to suit your modern lifestyle. The watch boasts a digital display that provides clear and precise timekeeping, along with additional functionalities such as an alarm, stopwatch, and countdown timer.",
+          title: "Casio Digital",
+          trending: false,
+          base_price: "2600",
+          price: "2390",
+          delivery_time: "4",
+          reviews: "1000",
+          in_stock: true,
+          stock_count: "14"
+          }
+          ,
+        {
+          _id: "J1098765432132",
+          image: "https://res.cloudinary.com/dn5zs5sqx/image/upload/v1686247032/casio2_x2dzqt.webp",
+          category: "digital",
+          rating: "2.6",
+          description: "The Casio G-Shock Digital Watch is a timepiece that combines style and functionality. Featuring a sleek design, it offers a range of features to suit your modern lifestyle. The watch boasts a digital display that provides clear and precise timekeeping, along with additional functionalities such as an alarm, stopwatch, and countdown timer.",
+          title: "Casio G-Shock Digital",
+          trending: true,
+          base_price: "5600",
+          price: "2390",
+          delivery_time: "4",
+          reviews: "1000",
+          in_stock: true,
+          stock_count: "14"
+          }
+          ,
+        {
+          _id: "J1098765432192",
+          image: "https://res.cloudinary.com/dn5zs5sqx/image/upload/v1686247039/casioVintage_slvqp7.webp",
+          category: "digital",
+          rating: "4.6",
+          description: "The Casio Vintage Digital Watch is a timepiece that combines style and functionality. Featuring a sleek design, it offers a range of features to suit your modern lifestyle. The watch boasts a digital display that provides clear and precise timekeeping, along with additional functionalities such as an alarm, stopwatch, and countdown timer.",
+          title: "Casio Vintage Digital",
+          trending: false,
+          base_price: "8600",
+          price: "4490",
+          delivery_time: "4",
+          reviews: "1000",
+          in_stock: false,
+          stock_count: "14"
+          }
 ];
