@@ -53,14 +53,6 @@ const Header = () => {
       </div>
 
       <div className="navbar-right">
-        <div>
-          {" "}
-          <Link to="/login" className="login-btn">
-            {" "}
-            Login
-          </Link>
-        </div>
-
         <div onClick={() => navigate("/cart")}>
           <ShoppingBagIcon className="nav nav-bag" />
         </div>
