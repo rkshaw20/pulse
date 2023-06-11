@@ -5,6 +5,7 @@ export const filterInitialState = {
   priceFilter: 10000,
   categoryFilter: [],
   ratingFilter: "",
+  sortByPrice:''
 };
 
 export const filterReducer = (state, action) => {
@@ -38,6 +39,15 @@ export const filterReducer = (state, action) => {
         return{
             ...state, ratingFilter: action.payload
         }
+    }
+    case TYPE.SORT_BY_PRICE:{
+      return {
+        ...state, sortByPrice:action.payload
+      }
+    }
+    case TYPE.CLEAR_FILTER:{
+      return filterInitialState
+      
     }
     default:
       return;

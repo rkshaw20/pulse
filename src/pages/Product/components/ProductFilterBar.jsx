@@ -7,13 +7,14 @@ import { useDataContext } from "../../../contexts/DataContextProvider";
 
 const ProductFilterBar = () => {
   const { categories } = useDataContext();
-  console.log(categories);
   const { appliedFilters, dispatchFilter } = useFilterContext();
 
   const rating = [1, 2, 3, 4];
 
   const handleFilter = (e, filterType) =>
     dispatchFilter({ type: filterType, payload: e.target.value });
+
+    const handleClearFilter=(filterType)=> dispatchFilter({type:filterType})
 
   return (
     <div className="filter-container">
@@ -22,7 +23,35 @@ const ProductFilterBar = () => {
           <b>Filters</b>{" "}
         </p>
 
-        <p className="clear-filter-btn">Reset</p>
+        <p className="clear-filter-btn" onClick={()=>handleClearFilter(TYPE.CLEAR_FILTER)} >Reset</p>
+      </div>
+
+      <div className="price-sort">
+        <fieldset>
+          <legend>Sort By Price</legend>
+          <label htmlFor="highToLow">
+            <input
+              type="radio"
+              name="price-sort"
+              id="highToLow"
+              value="HIGH_TO_LOW"
+              checked={appliedFilters.sortByPrice === "HIGH_TO_LOW"}
+              onChange={(e) => handleFilter(e, TYPE.SORT_BY_PRICE)}
+            />
+            High to Low
+          </label>
+          <label htmlFor="lowToHigh">
+            <input
+              type="radio"
+              name="price-sort"
+              id="lowToHigh"
+              value="LOW_TO_HIGH"
+              checked={appliedFilters.sortByPrice === "LOW_TO_HIGH"}
+              onChange={(e) => handleFilter(e, TYPE.SORT_BY_PRICE)}
+            />
+            Low to High
+          </label>
+        </fieldset>
       </div>
 
       {/* price filter */}
@@ -64,7 +93,7 @@ const ProductFilterBar = () => {
                 type="checkbox"
                 value={categoryName.toLowerCase()}
                 checked={appliedFilters.categoryFilter.includes(
-                  categoryName.toLowerCase()
+                categoryName.toLowerCase()
                 )}
                 onChange={(e) => handleFilter(e, TYPE.CATEGORY_FILTER)}
               />

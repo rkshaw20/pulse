@@ -15,7 +15,12 @@
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 2rem;
   margin-top: 1rem;
+  place-items: center;
+
 }
+
+.no-product-found{
+  font-size: 1.5rem;}
 
 /* @media (min-width: 600px) {
     .productList{

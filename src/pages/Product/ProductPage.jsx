@@ -12,6 +12,7 @@ const {appliedFilters}=useFilterContext()
 
 const filteredProduct=getFilteredProducts(products,appliedFilters);
 
+
   return (
        <div className="productPage">
       <div className="product-filter">
@@ -20,10 +21,10 @@ const filteredProduct=getFilteredProducts(products,appliedFilters);
       <div className="page-header">
       <h2>Products ({filteredProduct.length})</h2>
       <div className="productList">
-        {filteredProduct.map((product)=>(
+        {filteredProduct.length>0 ? filteredProduct.map((product)=>(
           
           <ProductCard key={product._id} product={product} />
-        ))}
+        )) : <p className='no-product-found'>No product for applied filter </p>}
       </div>
       </div>
     </div>
