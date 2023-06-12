@@ -15,7 +15,6 @@ const Home = () => {
     dispatchFilter({ type: TYPE.ADD_CATEGORY_FILTER, payload: categoryName.toLowerCase() });
   }
    
-  console.log(appliedFilters);
 
   return (
     <div className="home">

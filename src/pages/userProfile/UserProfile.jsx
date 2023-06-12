@@ -2,12 +2,16 @@ import { useAuthContext } from "../../contexts/AuthContextProvider";
 import "./UserProfile.css";
 
 const UserProfile = () => {
-  const { user, setUser } = useAuthContext();
+  const { user, setUser, token, setToken } = useAuthContext();
 
   const handleLogout = () => {
     localStorage.removeItem("user");
+    localStorage.removeItem("token")
     setUser(null);
+    setToken(null);
   };
+
+  const fullName=user.firstName + user.lastName;
   return (
     <div className="profile-page">
       <h2>Account</h2>
@@ -18,7 +22,7 @@ const UserProfile = () => {
             <button className="address-btn">Address</button>
           </div>
 
-          <p>Full Name: {user.username}</p>
+          <p>Full Name: {fullName}</p>
           <p>Email: {user.email}</p>
         </div>
         <div className="logout-btn">

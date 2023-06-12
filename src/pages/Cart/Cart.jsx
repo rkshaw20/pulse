@@ -1,15 +1,12 @@
 import { useState } from "react";
-
 import "./Cart.css";
-
-import { products } from "../../backend/db/products";
 import CartProductCard from "./components/CartProductCard";
 import PriceDetails from "./components/PriceDetails";
+import { useDataContext } from "../../contexts/DataContextProvider";
 
 const Cart = () => {
   // console.log(products)
-  const [cart, setCart] = useState(true);
-
+const {cart}=useDataContext()
   return (
     <div className="cart-page">
          <div className="cart-header">
@@ -21,13 +18,13 @@ const Cart = () => {
       <div className="cart-details">
         {/* <div className="cart-container"> */}
           <div className="cart-products-section">
-            {products.map((product) => (
+            {cart.map((product) => (
               <CartProductCard key={product._id} product={product} />
             ))}
           </div>
         {/* </div> */}
         <div className="price-details-section">
-        <PriceDetails cart={products} />
+        <PriceDetails cart={cart} />
       </div>
       </div>
 

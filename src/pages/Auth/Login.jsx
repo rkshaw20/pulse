@@ -1,46 +1,54 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import "./Auth.css";
+
 import { useAuthContext } from "../../contexts/AuthContextProvider";
 import { useState } from "react";
-import { guestUser, localStorageKeys } from "../../constant";
-import { loginService } from "../../services/services";
+import { guestUser } from "../../constant";
+import { loginService } from "../../services/authServices";
 import { setLocalStorage } from "../../utils/utils";
+import { useEffect } from "react";
 
-// const userType = { Guest: "guest", Registered: "registered" };
 const intialLoginState = { email: "", password: "" };
 
 export const Login = () => {
-  const { setUser } = useAuthContext();
- 
+  const {user, token, setUser, setToken } = useAuthContext();
+
   const navigate = useNavigate();
-  const location=useLocation();
+  const location = useLocation();
+  console.log(location)
 
   const [userInput, setUserInput] = useState(intialLoginState);
- 
-  const redirectPath=location.state?.path || '/';
 
-  const handleGuestInput=(e)=>{
-    setUserInput(guestUser)
-    loginSubmit(e,guestUser)
-  }
+
+  const redirectPath = location.state?.path || "/";
+
+  useEffect(()=>{
+    if(user){
+      navigate('/' , {replace:true}) }
+  },[token])
+
+  const handleGuestInput = (e) => {
+    setUserInput(guestUser);
+    loginSubmit(e, guestUser);
+  };
 
   const handleUserInput = (e) => {
     setUserInput({ ...userInput, [e.target.name]: e.target.value });
   };
 
-  const loginSubmit = async (e, loginDetails) => {
 
-    
+
+  const loginSubmit = async (e, loginDetails) => {
     e.preventDefault();
     try {
-      const data = await loginService(loginDetails);
+      const { user, token } = await loginService(loginDetails);
 
-      setUser(data);
-
-      setLocalStorage(localStorageKeys.User, data);
-
-      navigate(redirectPath, {replace:true});
+      setUser(user);
+      setToken(token);
+      setLocalStorage("user", user);
+      setLocalStorage("token", token);
+      navigate(redirectPath, { replace: true });
     } catch (error) {
       console.log(error);
     }
@@ -50,10 +58,7 @@ export const Login = () => {
     <div className="auth-container">
       <div className="login-form">
         <h1>Login</h1>
-        <form
-          className="auth-form"
-          onSubmit={(e) => loginSubmit(e, userInput)}
-        >
+        <form className="auth-form" onSubmit={(e) => loginSubmit(e, userInput)}>
           <div className="auth-email">
             <label className="email-label" htmlFor="email">
               Email Address
@@ -95,7 +100,7 @@ export const Login = () => {
         </form>
         <button
           className="login-guest-btn"
-          onClick={(e)=>handleGuestInput(e)}
+          onClick={(e) => handleGuestInput(e)}
         >
           Login As a Guest
         </button>

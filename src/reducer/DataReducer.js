@@ -3,6 +3,8 @@ import { TYPE } from "../utils/constants";
 export const dataInitialState = {
   products: [],
   categories: [],
+  cart:[],
+  wishlist:[],
 };
 
 export const dataReducer = (state, action) => {
@@ -17,6 +19,11 @@ export const dataReducer = (state, action) => {
         ...state,
         categories: [...action.payload],
       };
+      case TYPE.ADD_TO_CART:
+        return{
+          ...state,
+          cart: [...action.payload],
+        }
     default:
       return;
   }

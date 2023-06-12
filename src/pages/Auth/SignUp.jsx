@@ -1,16 +1,17 @@
+import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../contexts/AuthContextProvider";
-import { useFormInput } from "../../hooks/useFormInput";
-import { setLocalStorage, handleToast } from "../../utils/utils";
-import { signUpService } from "../../services/services";
+import { signUpService } from "../../services/authServices";
+import { setLocalStorage } from "../../utils/utils";
+import { useEffect } from "react";
 
 const SignUp = () => {
-  const { user, setUser } = useAuthContext();
+  const { user, setUser, token, setToken } = useAuthContext();
 
   const signUpLocation = useLocation();
   const navigate = useNavigate();
 
-  const { inputValue, handleInputChange } = useFormInput({
+  const [inputValue, setValue] = useState({
     firstName: "",
     lastName: "",
     email: "",
@@ -18,21 +19,27 @@ const SignUp = () => {
     confirmPassword: "",
   });
 
-  const createAccount = async (e) => {
-    // console.log('outside');
-    try {
-      e.preventDefault();
-      // console.log('inside')
+  useEffect(() => {
+    if (user) {
+      navigate("/", { replace: true });
+    }
+  }, [token]);
 
+  const handleInputChange = (e) =>
+    setValue({ ...inputValue, [e.target.name]: e.target.value });
+
+  const createAccount = async (e) => {
+    e.preventDefault();
+
+    try {
       const { firstName, lastName, email, password, confirmPassword } =
         inputValue;
 
       if (password !== confirmPassword) {
-        handleToast("error", "Passwords do not match");
         return;
       }
 
-      const data = await signUpService({
+      const { user, token } = await signUpService({
         firstName,
         lastName,
         email,
@@ -40,13 +47,11 @@ const SignUp = () => {
       });
 
       // updating AuthContext
-      setUser(data);
-      setLocalStorage("user", data);
-      // handleToast("success", "Sign up successful");
+      setUser(user);
+      setToken(token);
       navigate("/");
     } catch (error) {
-      console.log(error)
-      handleToast("error", error.response.data.errors);
+      console.log(error);
     }
   };
 

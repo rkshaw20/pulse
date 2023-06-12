@@ -95,8 +95,20 @@
    
 }
 
+.in-cart{
+  background-color: #78ac60;
+}
+
+.in-cart:hover{
+  background-color: rgb(34, 186, 34);
+
+}
 .add-to-cart-btn:hover{
-    background-color: rgb(249, 163, 3);
+    background-color: rgb(137, 182, 114);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     transition: box-shadow 0.3s;
+}
+
+.forward-icon{
+  padding-left: 3%;
 }

@@ -14,7 +14,8 @@ const ProductFilterBar = () => {
   const handleFilter = (e, filterType) =>
     dispatchFilter({ type: filterType, payload: e.target.value });
 
-    const handleClearFilter=(filterType)=> dispatchFilter({type:filterType})
+  const handleClearFilter = (filterType) =>
+    dispatchFilter({ type: filterType });
 
   return (
     <div className="filter-container">
@@ -23,7 +24,12 @@ const ProductFilterBar = () => {
           <b>Filters</b>{" "}
         </p>
 
-        <p className="clear-filter-btn" onClick={()=>handleClearFilter(TYPE.CLEAR_FILTER)} >Reset</p>
+        <p
+          className="clear-filter-btn"
+          onClick={() => handleClearFilter(TYPE.CLEAR_FILTER)}
+        >
+          Reset
+        </p>
       </div>
 
       <div className="price-sort">
@@ -86,14 +92,13 @@ const ProductFilterBar = () => {
             <b>Category</b>
           </legend>
           {categories.map(({ categoryName }) => (
-            <label htmlFor={categoryName}>
+            <label key={categoryName} htmlFor={categoryName}>
               <input
-                key={categoryName}
                 id={categoryName}
                 type="checkbox"
                 value={categoryName.toLowerCase()}
                 checked={appliedFilters.categoryFilter.includes(
-                categoryName.toLowerCase()
+                  categoryName.toLowerCase()
                 )}
                 onChange={(e) => handleFilter(e, TYPE.CATEGORY_FILTER)}
               />
