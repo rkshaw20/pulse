@@ -41,7 +41,10 @@
   padding: 0.3rem 0.8rem;
 }
 .product-wishlist-icon:hover {
-  color: red;
+  color: #ff0000;
+}
+.in-wishlist{
+  color:#ff0000;
 }
 .card-details {
   text-align: left;

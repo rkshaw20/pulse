@@ -40,9 +40,12 @@
 }
 
 .wishlist-icon:hover {
-  fill: #ff0000;
+  color: #ff0000;
 }
 
+.in-wishlist{
+  color: #ff0000;
+}
 
 .card-header {
     display: flex;

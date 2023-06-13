@@ -21,19 +21,11 @@ export const useDataContext = () => useContext(DataContext);
 const DataContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(dataReducer, dataInitialState);
   const [loader, setLoader]=useState(false);
-  const { user } = useAuthContext();
 
   useEffect(() => {
     getProducts(setLoader,dispatch);
     getCategories(setLoader,dispatch);
   }, []);
-
-
-  // useEffect(() => {
-  //   if (user) {
-  //     dispatch({ type: TYPE.ADD_TO_CART, payload: user.cart });
-  //   }
-  // }, [user]);
 
   return (
     <DataContext.Provider
@@ -41,6 +33,7 @@ const DataContextProvider = ({ children }) => {
         products: state.products,
         categories: state.categories,
         cart: state.cart,
+        wishlist:state.wishlist,
         dataDispatch:dispatch,
         loader,
         setLoader,

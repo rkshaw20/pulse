@@ -1,15 +1,42 @@
-import { useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 
 import StarIcon from "@mui/icons-material/Star";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import LocalOfferIcon from "@mui/icons-material/LocalOffer";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 import "./Product.css";
-import { products } from "../../backend/db/products";
+import { useDataContext } from "../../contexts/DataContextProvider";
+import { useAuthContext } from "../../contexts/AuthContextProvider";
+import {
+  getPercentageOff,
+  isProductInCard,
+  isProductInWishlist,
+} from "../../utils/productUtils";
+import { useState } from "react";
+import {
+  addToCart,
+  addToWishlist,
+  getSingleProduct,
+  removeFromWishlist,
+} from "../../services/dataServices";
+import { useEffect } from "react";
 
 const Product = () => {
+  const { token } = useAuthContext();
+  const { cart, wishlist, dataDispatch, setLoader } = useDataContext();
+  const [btnDisabled, setBtnDisabled] = useState(false);
+  const [product, setProduct] = useState(null);
   const { productId } = useParams();
-  const product = products?.find((product) => product._id === productId);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    getSingleProduct(productId, setProduct, setLoader);
+  }, [productId, setLoader]);
+
+  if (!product) {
+    return <div>Loading...</div>;
+  }
 
   const {
     _id,
@@ -26,7 +53,24 @@ const Product = () => {
     stock_count,
   } = product;
 
-  const percentageOff = Math.ceil(((base_price - price) / base_price) * 100);
+  const percentageOff = getPercentageOff(base_price, price);
+  const isInCart = isProductInCard(cart, _id);
+  const isInWishlist = isProductInWishlist(wishlist, _id);
+
+  const addToCartHandler = () =>
+    token
+      ? isInCart
+        ? navigate("/cart")
+        : addToCart(dataDispatch, product, token, setBtnDisabled)
+      : navigate("/login", { state: { from: location?.pathname } });
+
+  const addToWishlistHandler = () => {
+    token
+      ? isInWishlist
+        ? removeFromWishlist(_id, dataDispatch, token, setBtnDisabled)
+        : addToWishlist(dataDispatch, product, token, setBtnDisabled)
+      : navigate("/login", { state: { from: location?.pathname } });
+  };
 
   return (
     <div className="single-card-container">
@@ -34,8 +78,12 @@ const Product = () => {
         <div className="card-left">
           <img className="card-image" src={image} alt={title} />
           {trending && <span className="product-trending-icon">Trending</span>}
-          <span>
-            <FavoriteIcon className="product-wishlist-icon" />
+
+          <span
+            className={`product-wishlist-icon ${isInWishlist && "in-wishlist"}`}
+            onClick={() => addToWishlistHandler()}
+          >
+            <FavoriteIcon />
           </span>
         </div>
 
@@ -64,14 +112,20 @@ const Product = () => {
               <b>Availability :</b>
               {stock_count > 0 ? " In Stock" : " Out Of Stock"}{" "}
             </p>
-            {/* <p className="product-left">{stock_count < 0 ? '' :}</p> */}
             <p className="product-description">
               {" "}
               <b>Description :</b> {description}
             </p>
           </div>
           <div>
-            <button className="add-to-cart-btn">Add To Cart</button>
+            <button
+              className={`add-to-cart-btn ${isInCart && "in-cart"}`}
+              onClick={addToCartHandler}
+              disabled={btnDisabled}
+            >
+              {isInCart ? "Go to Cart " : "Add to Cart "}
+              {isInCart && <ArrowForwardIcon className="forward-icon" />}
+            </button>{" "}
           </div>
         </div>
       </div>

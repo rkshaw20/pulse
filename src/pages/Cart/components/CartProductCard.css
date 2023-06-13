@@ -44,5 +44,31 @@ cursor: pointer;
 
 .cart-product-btn-group >button{
     cursor: pointer;
+    height: 2rem;
+    width: 5rem;
+    font-weight: bold;
+    border-radius: .5rem;
+    color:white;
     /* margin-bottom: 1rem; */
 }
+
+.cart-remove-btn{
+  background-color: #ff0000;
+  border: whitesmoke;
+}
+
+/* .cart-remove-btn:hover{
+  background-color: white;
+  color: #ff0000;
+  border: #ff0000;
+} */
+.cart-addToWishlist-btn{
+  background-color: #617a55;
+  border: whitesmoke;
+}
+/* 
+.cart-addToWishlist-btn:hover{
+  background-color:whitesmoke ;
+  color: #617a55;
+  border: whitesmoke;
+} */

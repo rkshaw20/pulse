@@ -6,3 +6,7 @@ export const getPercentageOff=(base_price,price)=>{
 export const isProductInCard= (cart, id)=>{
    return cart.some((product)=>product._id === id)
 }
+
+export const isProductInWishlist=(wishlist,id)=>{
+   return wishlist.some((product)=>product._id === id)
+}
