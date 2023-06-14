@@ -24,16 +24,12 @@ const ProductCard = ({ product }) => {
   const {
     _id,
     image,
-    category,
-    rating,
-    description,
     title,
+    rating,
     trending,
     base_price,
     price,
-    reviews,
     in_stock,
-    stock_count,
   } = product;
   const { user, token } = useAuthContext();
   const { cart, wishlist, dataDispatch } = useDataContext();

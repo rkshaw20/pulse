@@ -1,10 +1,13 @@
-import { Link } from "react-router-dom";
-import { useAuthContext } from "../../../contexts/AuthContextProvider";
-import { useDataContext } from "../../../contexts/DataContextProvider";
-import { useFilterContext } from "../../../contexts/FIlterContextProvider";
+import { useNavigate } from "react-router-dom";
 
-const CheckoutDetails = ({ addressSelected }) => {
+import { useDataContext } from "../../../contexts/DataContextProvider";
+
+import { showToast } from "../../../utils/utils";
+import { ToastType } from "../../../utils/constants";
+
+const CheckoutDetails = ({ selectedAddress}) => {
   const { cart } = useDataContext();
+  const navigate = useNavigate();
 
   const totalItemPrice = cart.reduce(
     (acc, { price, qty }) => acc + price * qty,
@@ -13,7 +16,11 @@ const CheckoutDetails = ({ addressSelected }) => {
   const totalDiscount = totalItemPrice * 0.05;
   const totalAmount = totalItemPrice - totalDiscount + 40;
 
-  const handlePlaceOrder=()=>{}
+  const handlePlaceOrder = () =>
+    !selectedAddress
+      ? showToast(ToastType.Warn, "Select a Address")
+      : navigate("/orderPage");
+
   return (
     <div className="chechout-order-details">
       <h3>Order Details </h3>
@@ -24,7 +31,6 @@ const CheckoutDetails = ({ addressSelected }) => {
         </div>
         <div className="flex-items-col">
           {cart.map(({ _id, title, qty }) => {
-            
             return (
               <div className="flex-row" key={_id}>
                 <p>{title}</p>
@@ -48,16 +54,19 @@ const CheckoutDetails = ({ addressSelected }) => {
           </div>
           <hr />
           <div className="flex-row">
-            <p> <b>Total Amount</b> </p>
-            <p><b>₹ {totalAmount}</b></p>
+            <p>
+              {" "}
+              <b>Total Amount</b>{" "}
+            </p>
+            <p>
+              <b>₹ {totalAmount}</b>
+            </p>
           </div>
         </div>
       </div>
-      <Link to='/orderPage'>
       <button className="place-order-btn" onClick={handlePlaceOrder}>
         Place Order
       </button>
-      </Link>
     </div>
   );
 };

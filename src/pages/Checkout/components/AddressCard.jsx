@@ -1,6 +1,6 @@
 const AddressCard = ({
   address,
-  handleAddressChange,
+  handleAddressSelect,
   handleAddressDelete,
   setEditAddress,
   setIsEditing,
@@ -23,7 +23,7 @@ const AddressCard = ({
           className="address-input"
           value={id}
           checked={selectedAddress?.id === id}
-          onChange={(e) => handleAddressChange(e)}
+          onChange={handleAddressSelect}
         />
       )}
 

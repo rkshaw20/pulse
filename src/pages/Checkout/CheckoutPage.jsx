@@ -27,7 +27,7 @@ const CheckoutPage = () => {
           setSelectedAddress={setSelectedAddress}
         />
 
-        <CheckoutDetails />
+        <CheckoutDetails selectedAddress={selectedAddress} />
       </div>
     </div>
   );

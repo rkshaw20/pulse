@@ -5,14 +5,16 @@ import { TYPE } from "../../../utils/constants";
 import AddressCard from "./AddressCard";
 import AddressForm from "./AddressForm";
 
-const AddressList = ({ isAddressPage, selectedAddress, setSelectedAddress }) => {
+const AddressList = ({
+  isAddressPage,
+  selectedAddress,
+  setSelectedAddress,
+}) => {
   const { addresses, dataDispatch } = useDataContext();
   const [isEditing, setIsEditing] = useState(false);
   const [showForm, setShowForm] = useState(false);
   const [showCard, setShowCard] = useState(true);
   const [editAddress, setEditAddress] = useState(null);
-
- 
 
   const handleAddNewAddress = (address) => {
     dataDispatch({
@@ -29,7 +31,10 @@ const AddressList = ({ isAddressPage, selectedAddress, setSelectedAddress }) => 
     dataDispatch({ type: TYPE.DELETE_ADDRESS, payload: addressId });
   };
 
-  const handleAddressSelect=(e)=>setSelectedAddress((addresses.find(({id})=>id === e.target.value)))
+  const handleAddressSelect = (e) =>{
+    console.log(addresses.id)
+    setSelectedAddress(addresses.find(({ id }) => +id === +(e.target.value)));
+  }
 
   return (
     <div className="address-container">
@@ -47,7 +52,7 @@ const AddressList = ({ isAddressPage, selectedAddress, setSelectedAddress }) => 
             showCard={showCard}
             isAddressPage={isAddressPage}
             selectedAddress={selectedAddress}
-            handleAddressChange={handleAddressSelect}
+            handleAddressSelect={handleAddressSelect}
           />
         ))}
         {isEditing && (
