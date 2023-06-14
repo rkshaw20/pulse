@@ -24,6 +24,10 @@
   background-color: var(--primary-color);
   padding: 0 1rem;
   height: var(--nav-height);
+
+  position:sticky;
+  top:0;
+  z-index: 1000;
 }
 
 .left {
@@ -84,6 +88,18 @@
 
 .navbar-right .nav {
   margin-right: 10px; /* Adjust the desired spacing between the icons */
+}
+.wishlistIcon , .cartIcon{
+  position: relative;
+}
+.wishlist-popUp, .cart-popUp{
+  position: absolute;
+  bottom: 1rem;
+  right: 0;
+  background-color: lightgreen;
+  border-radius: 50%;
+  height: 1.5rem;
+  width: 1.5rem;
 }
 
 /* banner start */

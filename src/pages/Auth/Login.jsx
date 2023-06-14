@@ -6,17 +6,19 @@ import { useAuthContext } from "../../contexts/AuthContextProvider";
 import { useState } from "react";
 import { guestUser } from "../../constant";
 import { loginService } from "../../services/authServices";
-import { setLocalStorage } from "../../utils/utils";
+import { setLocalStorage, showToast } from "../../utils/utils";
 import { useEffect } from "react";
+import { useDataContext } from "../../contexts/DataContextProvider";
+import { toast } from "react-toastify";
+import { TOAST_CONFIG, TYPE, ToastType } from "../../utils/constants";
 
 const intialLoginState = { email: "", password: "" };
 
 export const Login = () => {
   const {user, token, setUser, setToken } = useAuthContext();
-
+  const {setLoader}=useDataContext()
   const navigate = useNavigate();
   const location = useLocation();
-  console.log(location)
 
   const [userInput, setUserInput] = useState(intialLoginState);
 
@@ -42,13 +44,15 @@ export const Login = () => {
   const loginSubmit = async (e, loginDetails) => {
     e.preventDefault();
     try {
+      setLoader(true);
       const { user, token } = await loginService(loginDetails);
-
+      setLoader(false);
       setUser(user);
       setToken(token);
       setLocalStorage("user", user);
       setLocalStorage("token", token);
       navigate(redirectPath, { replace: true });
+      showToast(ToastType.Success, "Login success")
     } catch (error) {
       console.log(error);
     }

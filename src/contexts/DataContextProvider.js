@@ -12,6 +12,8 @@ const DataContext = createContext({
   categories: [],
   cart: [],
   wishlist: [],
+  addresses:[],
+  loader: '',
   dataDispatch:()=>{},
   setLoader: ()=>{},
 });
@@ -34,6 +36,7 @@ const DataContextProvider = ({ children }) => {
         categories: state.categories,
         cart: state.cart,
         wishlist:state.wishlist,
+        addresses:state.addresses,
         dataDispatch:dispatch,
         loader,
         setLoader,

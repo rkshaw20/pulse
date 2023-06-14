@@ -8,3 +8,20 @@ export const getLocalStorage = (name) =>
 
 export const removeLocalStorage=(name)=>localStorage.removeItem(name);
 
+export const showToast = (type, message)=>{
+  const toastStyle = {
+    position: 'bottom-left',
+    autoClose: 1000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: 'light',
+  };
+
+  const toastFunc = toast[type];
+
+  // toast function call
+  toastFunc(message, toastStyle);
+}

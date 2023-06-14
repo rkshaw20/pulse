@@ -8,9 +8,11 @@ import { useFilterContext } from "../contexts/FIlterContextProvider";
 import { useState } from "react";
 import { TYPE } from "../utils/constants";
 import { useEffect } from "react";
+import { useDataContext } from "../contexts/DataContextProvider";
 
 const Header = () => {
   const { dispatchFilter } = useFilterContext();
+  const {cart , wishlist}=useDataContext();
   const [search , setSearch] = useState("");
 
   const navigate = useNavigate();
@@ -53,7 +55,8 @@ const Header = () => {
       </div>
 
       <div className="navbar-right">
-        <div onClick={() => navigate("/cart")}>
+        <div className='cartIcon' onClick={() => navigate("/cart")}>
+       {cart.length>0 &&  (<div className="cart-popUp">{cart.length}</div>)}  
           <ShoppingBagIcon className="nav nav-bag" />
         </div>
         <div
@@ -62,7 +65,8 @@ const Header = () => {
         >
           <AccountBoxIcon className="nav nav-userProfile" />
         </div>
-        <div onClick={() => navigate("/wishlist")}>
+        <div className="wishlistIcon" onClick={() => navigate("/wishlist")}>
+       {wishlist.length>0 && (<div className="wishlist-popUp">{wishlist.length}</div>)}  
           <FavoriteBorderIcon className="nav nav-wishlist" />
         </div>
       </div>

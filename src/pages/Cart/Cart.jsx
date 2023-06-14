@@ -4,7 +4,7 @@ import PriceDetails from "./components/PriceDetails";
 import { useDataContext } from "../../contexts/DataContextProvider";
 
 const Cart = () => {
-  const { cart, wishlist } = useDataContext();
+  const { cart } = useDataContext();
   return (
     <div className="cart-page">
       <div className="cart-header">

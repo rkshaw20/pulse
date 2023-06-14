@@ -1,12 +1,13 @@
 import axios from "axios";
-import { TYPE } from "../utils/constants";
+import { TYPE, ToastType } from "../utils/constants";
+import { showToast } from "../utils/utils";
 import { toast } from "react-toastify";
+
 
 export const getProducts = async (setLoader, dispatch) => {
   try {
     setLoader(true);
     const response = await axios.get("/api/products");
-    // console.log(response.data.products , 'checking product')
     setLoader(false);
     dispatch({
       type: TYPE.GET_PRODUCTS,
@@ -45,6 +46,7 @@ export const addToCart = async (dispatch, product, token, setBtnDisabled) => {
       }
     );
     setBtnDisabled(false);
+    showToast(ToastType.Success, 'Added To Cart')
     dispatch({ type: TYPE.ADD_TO_CART, payload: response.data.cart });
   } catch (error) {
     console.log(error);
@@ -60,7 +62,7 @@ export const removeFromCart = async (id, dispatch, token, setBtnDisabled) => {
       },
     });
     setBtnDisabled(false);
-
+    showToast(ToastType.Warn, "Removed From Cart")
     dispatch({ type: TYPE.REMOVE_FROM_CART, payload: response.data.cart });
   } catch (error) {
     console.log("error while removing item", error);
@@ -87,6 +89,7 @@ export const addToWishlist = async (
       }
     );
     setBtnDisabled(false);
+    showToast(ToastType.Success, "Added To Wishlist")
     dispatch({ type: TYPE.ADD_TO_WISHLIST, payload: response.data.wishlist });
   } catch (error) {
     console.log(error);
@@ -111,6 +114,7 @@ export const removeFromWishlist = async (
       type: TYPE.REMOVE_FROM_WISHLIST,
       payload: response.data.wishlist,
     });
+    showToast(ToastType.Warn, 'Removed From Wishlist')
   } catch (error) {
     console.log(error);
   }
@@ -149,9 +153,9 @@ export const updateProductQty = async (
         },
       }
     );
-    console.log(response)
     setBtnDisabled(false);
     dispatch({ type: TYPE.UPDATE_PRODUCT_QTY, payload: response.data.cart });
+    showToast(ToastType.Success, 'Quantity Updated')
   } catch (error) {
     console.log(error);
   }

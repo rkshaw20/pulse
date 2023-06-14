@@ -12,7 +12,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: rgb(214, 224, 209);
-
+ 
   
 }
 
@@ -23,4 +23,30 @@ code {
 
 html {
   scroll-behavior: smooth;
+}
+
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+
+.Toastify__toast-container {
+  width: fit-content;
+  margin: 0.5rem 0 0 0.5rem;
+}
+
+.Toastify__toast {
+  text-transform: capitalize;
+  width: fit-content !important;
+  max-width: fit-content;
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+  border-radius: var(--borderRadius);
+}
+
+@media screen and (min-width: 768px) {
+  .Toastify__toast {
+    font-size: 1rem;
+  }
 }

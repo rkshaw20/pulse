@@ -2,8 +2,9 @@ import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../contexts/AuthContextProvider";
 import { signUpService } from "../../services/authServices";
-import { setLocalStorage } from "../../utils/utils";
+import { setLocalStorage, showToast } from "../../utils/utils";
 import { useEffect } from "react";
+import { ToastType } from "../../utils/constants";
 
 const SignUp = () => {
   const { user, setUser, token, setToken } = useAuthContext();
@@ -36,6 +37,7 @@ const SignUp = () => {
         inputValue;
 
       if (password !== confirmPassword) {
+        showToast(ToastType.Warn, 'Password are Different')
         return;
       }
 
@@ -45,8 +47,7 @@ const SignUp = () => {
         email,
         password,
       });
-
-      // updating AuthContext
+      showToast(ToastType.Success, 'Signup successful' )
       setUser(user);
       setToken(token);
       navigate("/");

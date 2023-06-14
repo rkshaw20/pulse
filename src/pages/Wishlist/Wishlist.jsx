@@ -9,11 +9,13 @@ const Wishlist = () => {
   return (
     <div className="whislist-page">
       <h2 className="wishlist-header">Wishlist ({wishlist.length})</h2>
-      <div className="wishlist-container">
+      {!wishlist.length ? <p className="wishlist-empty-message">Your Wishlist Is Empty ! ☹️</p> :
+
+      (<div className="wishlist-container">
         {wishlist.map((product) => (
           <ProductCard key={product._id} product={product} />
         ))}
-      </div>
+      </div>)}
     </div>
   );
 };
