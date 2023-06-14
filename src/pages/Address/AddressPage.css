@@ -1,0 +1,96 @@
+.address-page {
+  /* border: 2px solid red; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.address-card-container {
+  border: 2px solid #617a55;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  position: relative;
+  padding: 0.5rem;
+  margin: 0.5rem;
+}
+
+.address-card-container:hover {
+  background-color: #d5f0c9;
+  cursor: pointer;
+}
+
+.address-input {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.address-label {
+  display: flex;
+  flex-direction: column;
+  /* font-size: 1rem; */
+}
+.address-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.address-btn-group > button {
+  margin: 0.5rem;
+  cursor: pointer;
+}
+
+/* addressList */
+
+.address-container {
+  /* border: 2px solid rgb(255, 251, 0); */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0.5rem;
+  background-color: whitesmoke;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin-top: 2rem;
+  width: 500px;
+  height: fit-content;
+  padding: 1rem;
+  /* margin-bottom: 1rem; */
+}
+
+.addNewAddress-header {
+  border: 2px solid #617a55;
+  /* text-align: left; */
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+}
+
+.addNewAddress-header:hover {
+  background-color: #617a55;
+}
+
+/* address form  */
+
+.address-form-container {
+  /* border: 2px solid blue; */
+  margin-bottom: 0.5rem;
+}
+
+.address-form {
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.address-form input {
+  padding: 0.5rem 0.5rem;
+  width: 80%;
+}
+
+.address-form-btn-group button {
+  margin: 0.5rem;
+  cursor: pointer;
+}
