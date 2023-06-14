@@ -1,6 +1,6 @@
+import { Link } from "react-router-dom";
 
 const PriceDetails=({cart})=>{
-const {price,base_price , qty}= cart;
 
 const totalItemPrice = cart.reduce((acc, { price, qty }) => acc + price * qty, 0);
 const totalDiscount= totalItemPrice * .05;
@@ -31,7 +31,10 @@ return(
             <p className="cal-price">₹ {totalCartPrice.toFixed()}</p>
         </ul>
         <div className="price-details-checkout">
+            <Link to='/checkoutPage'>
             <button className="checkout-btn">Checkout</button>
+
+            </Link>
         </div>
     </div>
 )
