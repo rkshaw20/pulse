@@ -10,11 +10,10 @@
   width: 270px;
   height: 100%;
   padding: 1rem;
-  gap: 1rem;
+  gap: .3rem;
   position: fixed;
   left: 0;
-  /* overflow-y: auto;
-    z-index: 5; */
+  
 }
 
 .clear-filter-btn {
