@@ -28,6 +28,8 @@
 .place-order-btn{
     margin-bottom: .5rem;
     cursor: pointer;
+    padding: .5rem;
+    border-radius: .5rem;
 }
 
 .place-order-btn:hover{
