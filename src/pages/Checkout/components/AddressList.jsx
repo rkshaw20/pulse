@@ -33,7 +33,7 @@ const AddressList = ({
 
   const handleAddressSelect = (e) =>{
     console.log(addresses.id)
-    setSelectedAddress(addresses.find(({ id }) => +id === +(e.target.value)));
+    setSelectedAddress(addresses.find(({ id }) => id === (e.target.value)));
   }
 
   return (
