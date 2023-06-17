@@ -5,7 +5,7 @@ Live Project- https://pulse-pi.vercel.app/
 ## Tech Stack
 
 - **Frontend:** HTML, CSS, JS, React
-- **Backend:** MockBee
+- **Backend:** MockBee (mock backend)
 - **Version Control:** Git and GitHub
 - **Hosting:** Vercel
 - **Code Editor and Tools:** VS Code, npm
