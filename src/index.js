@@ -14,7 +14,7 @@ makeServer();
 const root = createRoot(document.getElementById("root"));
 
 root.render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <Router>
       <AuthContextProvider>
         <DataContextProvider>
@@ -24,5 +24,5 @@ root.render(
         </DataContextProvider>
       </AuthContextProvider>
     </Router>
-  </React.StrictMode>
+  // </React.StrictMode>
 );
