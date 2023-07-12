@@ -22,7 +22,7 @@
   background-image: url(../src/assets/images/background1.jpg);
   background-size: cover ;
 
-  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   align-items: center;

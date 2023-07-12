@@ -7,16 +7,17 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { useFilterContext } from "../contexts/FIlterContextProvider";
 import { useState } from "react";
 import { TYPE } from "../utils/constants";
+import logo from "../assets/favicon.ico";
 import { useEffect } from "react";
 import { useDataContext } from "../contexts/DataContextProvider";
 
 const Header = () => {
   const { dispatchFilter } = useFilterContext();
-  const {cart , wishlist}=useDataContext();
-  const [search , setSearch] = useState("");
+  const { cart, wishlist } = useDataContext();
+  const [search, setSearch] = useState("");
 
   const navigate = useNavigate();
-  const location=useLocation();
+  const location = useLocation();
 
   useEffect(() => {
     let timer;
@@ -28,9 +29,8 @@ const Header = () => {
     return () => clearTimeout(timer);
   }, [search]);
 
- 
   const handleSearchChange = (e) => {
-      setSearch(e.target.value);
+    setSearch(e.target.value);
   };
 
   return (
@@ -38,6 +38,9 @@ const Header = () => {
       <div className="nav left">
         <Link to="/" className="main-title">
           Pulse.
+        </Link>
+        <Link to="/" className="main-logo">
+          <img src={logo} alt="logo" />
         </Link>
       </div>
 
@@ -50,13 +53,13 @@ const Header = () => {
           className="search-input"
           value={search}
           placeholder="search..."
-          onChange={(e)=>handleSearchChange(e)}
+          onChange={(e) => handleSearchChange(e)}
         />
       </div>
 
       <div className="navbar-right">
-        <div className='cartIcon' onClick={() => navigate("/cart")}>
-       {cart.length>0 &&  (<div className="cart-popUp">{cart.length}</div>)}  
+        <div className="cartIcon" onClick={() => navigate("/cart")}>
+          {cart.length > 0 && <div className="cart-popUp">{cart.length}</div>}
           <ShoppingBagIcon className="nav nav-bag" />
         </div>
         <div
@@ -66,7 +69,9 @@ const Header = () => {
           <AccountBoxIcon className="nav nav-userProfile" />
         </div>
         <div className="wishlistIcon" onClick={() => navigate("/wishlist")}>
-       {wishlist.length>0 && (<div className="wishlist-popUp">{wishlist.length}</div>)}  
+          {wishlist.length > 0 && (
+            <div className="wishlist-popUp">{wishlist.length}</div>
+          )}
           <FavoriteBorderIcon className="nav nav-wishlist" />
         </div>
       </div>
