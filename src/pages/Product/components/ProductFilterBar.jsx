@@ -8,6 +8,7 @@ import { useDataContext } from "../../../contexts/DataContextProvider";
 const ProductFilterBar = () => {
   const { categories } = useDataContext();
   const { appliedFilters, dispatchFilter } = useFilterContext();
+  const [drawer, setDrawer] = useState(false);
 
   const rating = [1, 2, 3, 4];
 
