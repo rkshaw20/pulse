@@ -4,6 +4,7 @@
 
 .filter-container {
   /* border-right: 2px solid rgb(97, 122, 85); */
+  background: #d6e0d1;
   display: flex;
   flex-direction: column;
   text-align: left;
@@ -13,7 +14,6 @@
   gap: .3rem;
   position: fixed;
   left: 0;
-  
 }
 
 .clear-filter-btn {
@@ -54,4 +54,12 @@ legend {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+}
+
+@media (max-width:786px) {
+
+  .scrollbar{
+    height: 75dvh;
+    overflow-y: auto;
+  }
 }
