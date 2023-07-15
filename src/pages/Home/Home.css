@@ -177,7 +177,7 @@
   gap: 0.5rem;
   cursor: pointer;
   box-shadow: 0.2rem 0.2rem var(--primary-color);
-  transition: box-shadow 0.3s; /
+  transition: box-shadow 0.3s; 
 }
 
 .category-card:hover {
