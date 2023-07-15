@@ -13,12 +13,9 @@
 
 .home {
   background-color: var(--background-color);
-  /* padding-bottom: 0;
-  margin-bottom: 0; */
 }
 
 .header {
-  /* border: 2px solid red; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -59,7 +56,6 @@
 .nav-search {
   height: 40px;
   color: var(--primary-color);
-  /* padding-right: 2rem; */
 }
 
 .search-input {
@@ -78,16 +74,13 @@
 
 
 .navbar-right {
-  /* border: 2px solid red; */
-
   display: flex;
   justify-content: space-between;
   margin-right: .3rem;
-  /* margin-right: -10rem; */
 }
 
 .navbar-right .nav {
-  margin-right: 10px; /* Adjust the desired spacing between the icons */
+  margin-right: 10px;
 }
 .wishlistIcon , .cartIcon{
   position: relative;
@@ -106,7 +99,6 @@
 /* banner start */
 
 .banner {
-  /* border: 2px solid red; */
   background-image: url(/src/assets/images/rolex1.jpg);
   background-size: cover;
   background-position: center;
@@ -153,7 +145,6 @@
   padding: 0.2rem 1rem;
   letter-spacing: 0.1rem;
   cursor: pointer;
-  /* padding: 10px 20px; */
 }
 .banner-btn:hover {
   background-color: white;
@@ -186,11 +177,11 @@
   gap: 0.5rem;
   cursor: pointer;
   box-shadow: 0.2rem 0.2rem var(--primary-color);
-  transition: box-shadow 0.3s; /* Add a smooth transition effect */
+  transition: box-shadow 0.3s; /
 }
 
 .category-card:hover {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Customize the shadow properties */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
 }
 .category-card > img {
   height: 10rem;
@@ -213,7 +204,6 @@
   }
   .left{
     margin: .5rem;
-    /* align-items: flex-start; */
   }
   .main-title {
     display: none;
