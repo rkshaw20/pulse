@@ -10,28 +10,39 @@ import { TYPE } from "../utils/constants";
 import logo from "../assets/favicon.ico";
 import { useEffect } from "react";
 import { useDataContext } from "../contexts/DataContextProvider";
+import { getFilteredProducts } from "../utils/getFilteredProducts";
 
 const Header = () => {
   const { dispatchFilter } = useFilterContext();
-  const { cart, wishlist } = useDataContext();
+  const { cart, wishlist, products } = useDataContext();
+  const { appliedFilters } = useFilterContext();
+
   const [search, setSearch] = useState("");
+  const [showSuggestion, setShowSuggestion] = useState(false);
 
   const navigate = useNavigate();
   const location = useLocation();
 
   useEffect(() => {
-    let timer;
-    if (location?.pathname === "/productPage") {
-      timer = setTimeout(() => {
-        dispatchFilter({ type: TYPE.SEARCH_FILTER, payload: search });
-      }, 500);
-    }
+    let timer = setTimeout(() => {
+      dispatchFilter({ type: TYPE.SEARCH_FILTER, payload: search });
+    }, 500);
     return () => clearTimeout(timer);
   }, [search]);
+
+  useEffect(() => {
+    setSearch(appliedFilters.searchFilter);
+  }, [appliedFilters]);
 
   const handleSearchChange = (e) => {
     setSearch(e.target.value);
   };
+  const closeSuggestion = () => {
+    setTimeout(() => {
+      setShowSuggestion(false);
+    }, 250);
+  };
+  const filteredProduct = getFilteredProducts(products, appliedFilters);
 
   return (
     <div className="header">
@@ -53,8 +64,27 @@ const Header = () => {
           className="search-input"
           value={search}
           placeholder="search..."
-          onChange={(e) => handleSearchChange(e)}
+          onChange={(e) => {
+            handleSearchChange(e);
+            setShowSuggestion(true);
+          }}
+          onBlur={closeSuggestion}
         />
+        {showSuggestion && search.length ? (
+          <div className="search-suggestion">
+            {filteredProduct.length ? (
+              filteredProduct.map((product) => (
+                <div key={product._id}>
+                  <Link to="/productPage" className="search-item">
+                    {product.title}
+                  </Link>
+                </div>
+              ))
+            ) : (
+              <p className="no-product-found">No product with this name </p>
+            )}{" "}
+          </div>
+        ): null}
       </div>
 
       <div className="navbar-right">

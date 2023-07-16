@@ -19,7 +19,6 @@ import {
   removeFromWishlist,
 } from "../../../services/dataServices";
 
-//   const toggleWishlist=()=>{}
 const ProductCard = ({ product }) => {
   const {
     _id,
@@ -29,9 +28,8 @@ const ProductCard = ({ product }) => {
     trending,
     base_price,
     price,
-    in_stock,
   } = product;
-  const { user, token } = useAuthContext();
+  const { token } = useAuthContext();
   const { cart, wishlist, dataDispatch } = useDataContext();
   const [btnDisabled, setBtnDisabled] = useState(false);
   const navigate = useNavigate();

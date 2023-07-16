@@ -53,6 +53,28 @@
   transform: translateY(-50%);
   margin: .2rem;
 }
+.search-suggestion{
+  position: absolute;
+  left: .8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: .5rem;
+  background: rgb(255, 253, 253);
+  width: 90%;
+  max-height: 6rem;
+  overflow-y: auto;
+  border-radius: .2rem;
+}
+.search-item{
+  margin-bottom: .5rem;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+/* .search-item:hover{
+  background-color: var(--primary-color)
+} */
 .nav-search {
   height: 40px;
   color: var(--primary-color);

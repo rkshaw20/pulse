@@ -24,6 +24,20 @@ code {
 html {
   scroll-behavior: smooth;
 }
+/* Global CSS */
+::-webkit-scrollbar {
+  width: .3rem;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color:#617a55 ;
+}
+
+
 
 body {
   max-width: 100%;
