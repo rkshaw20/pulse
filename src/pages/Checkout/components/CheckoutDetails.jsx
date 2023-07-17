@@ -22,9 +22,9 @@ const CheckoutDetails = ({ selectedAddress}) => {
       : navigate("/orderPage");
 
   return (
-    <div className="chechout-order-details">
+    <div className="checkout-order-details">
       <h3>Order Details </h3>
-      <div className="order-details">
+      <div className="order-list">
         <div className="flex-row bold">
           <p>Items</p>
           <p>Quantity</p>

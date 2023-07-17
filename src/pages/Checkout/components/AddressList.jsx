@@ -37,9 +37,10 @@ const AddressList = ({
 
   return (
     <div className="address-container">
-      {}
-      <h2>Addresses</h2>
       <div>
+      <h2>Addresses</h2>
+      </div>
+      <div className="addressMain" >
         {addresses.map((address) => (
           <AddressCard
             address={address}
@@ -66,7 +67,7 @@ const AddressList = ({
         )}
         {!showForm && (
           <div
-            className="addNewAddress-header"
+            className="addNewAddress-btn"
             onClick={() => setShowForm(true)}
           >
             <p> + Add New Address</p>

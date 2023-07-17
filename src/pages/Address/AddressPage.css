@@ -4,12 +4,31 @@
   flex-direction: column;
   align-items: center;
 }
-
+.address-container {
+  /* border: 2px solid rgb(255, 251, 0); */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0.5rem;
+  background-color: whitesmoke;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin-top: 2rem;
+  max-width: 70dvh;
+  height: fit-content;
+  padding: 1rem;
+  /* margin-bottom: 1rem; */
+}
+.addressMain{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .address-card-container {
   border: 2px solid #617a55;
   display: flex;
   flex-direction: column;
-  width: 400px;
+  width: 90%;
   position: relative;
   padding: 0.5rem;
   margin: 0.5rem;
@@ -44,25 +63,12 @@
 
 /* addressList */
 
-.address-container {
-  /* border: 2px solid rgb(255, 251, 0); */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0.5rem;
-  background-color: whitesmoke;
-  border-radius: 1.2rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  margin-top: 2rem;
-  width: 500px;
-  height: fit-content;
-  padding: 1rem;
-  /* margin-bottom: 1rem; */
-}
 
-.addNewAddress-header {
+
+.addNewAddress-btn {
   border: 2px solid #617a55;
   /* text-align: left; */
+  width: 95% ;
   cursor: pointer;
   margin-bottom: 0.5rem;
 }
@@ -76,6 +82,7 @@
 .address-form-container {
   /* border: 2px solid blue; */
   margin-bottom: 0.5rem;
+  width: 90%;
 }
 
 .address-form {
@@ -87,7 +94,7 @@
 
 .address-form input {
   padding: 0.5rem 0.5rem;
-  width: 80%;
+  width: 70%;
 }
 
 .address-form-btn-group button {
