@@ -4,10 +4,11 @@ import "./UserProfile.css";
 import { useDataContext } from "../../contexts/DataContextProvider";
 import { TYPE } from "../../utils/constants";
 import { useFilterContext } from "../../contexts/FIlterContextProvider";
+import { removeFromCart } from "../../services/dataServices";
 
 const UserProfile = () => {
   const { user, setUser, setToken } = useAuthContext();
-  const { dataDispatch, setLoader } = useDataContext();
+  const { dataDispatch,setLoader } = useDataContext();
   const { dispatchFilter } = useFilterContext();
 
   const handleLogout = () => {

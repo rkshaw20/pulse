@@ -9,8 +9,7 @@ import { loginService } from "../../services/authServices";
 import { setLocalStorage, showToast } from "../../utils/utils";
 import { useEffect } from "react";
 import { useDataContext } from "../../contexts/DataContextProvider";
-import { toast } from "react-toastify";
-import { TOAST_CONFIG, TYPE, ToastType } from "../../utils/constants";
+import {  ToastType } from "../../utils/constants";
 
 const intialLoginState = { email: "", password: "" };
 

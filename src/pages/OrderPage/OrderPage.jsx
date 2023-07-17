@@ -11,12 +11,12 @@ const OrderPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const id = setTimeout(() => {
+    const timer = setTimeout(() => {
       navigate("/");
     }, 5000);
     dataDispatch({ type: TYPE.CLEAR_CART });
     dispatchFilter({ type: TYPE.CLEAR_FILTER });
-    return () => clearTimeout(id);
+    return () => clearTimeout(timer);
   }, []);
 
   return (

@@ -3,10 +3,16 @@ import { useNavigate } from "react-router-dom";
 import { useDataContext } from "../../../contexts/DataContextProvider";
 
 import { showToast } from "../../../utils/utils";
-import { ToastType } from "../../../utils/constants";
+import { TYPE, ToastType } from "../../../utils/constants";
+import { removeFromCart } from "../../../services/dataServices";
+import { useAuthContext } from "../../../contexts/AuthContextProvider";
+import { useFilterContext } from "../../../contexts/FIlterContextProvider";
 
 const CheckoutDetails = ({ selectedAddress}) => {
-  const { cart } = useDataContext();
+  const { cart ,dataDispatch} = useDataContext();
+  const { dispatchFilter } = useFilterContext();
+
+  const {token}=useAuthContext();
   const navigate = useNavigate();
 
   const totalItemPrice = cart.reduce(
@@ -16,10 +22,18 @@ const CheckoutDetails = ({ selectedAddress}) => {
   const totalDiscount = totalItemPrice * 0.05;
   const totalAmount = totalItemPrice - totalDiscount + 40;
 
-  const handlePlaceOrder = () =>
+  const handlePlaceOrder = () =>{
     !selectedAddress
-      ? showToast(ToastType.Warn, "Select a Address")
-      : navigate("/orderPage");
+    ? showToast(ToastType.Warn, "Select a Address")
+    : navigate("/orderPage");
+    dataDispatch({type:TYPE.CLEAR_CART})
+    dispatchFilter({type:TYPE.CLEAR_FILTER})
+    for(const item of cart){
+      removeFromCart(item._id,dataDispatch,token,()=>{},true)
+
+    }
+  }
+    
 
   return (
     <div className="checkout-order-details">

@@ -53,7 +53,7 @@ export const addToCart = async (dispatch, product, token, setBtnDisabled) => {
   }
 };
 
-export const removeFromCart = async (id, dispatch, token, setBtnDisabled) => {
+export const removeFromCart = async (id, dispatch, token, setBtnDisabled,isClear) => {
   try {
     setBtnDisabled(true);
     const response = await axios.delete(`/api/user/cart/${id}`, {
@@ -62,7 +62,9 @@ export const removeFromCart = async (id, dispatch, token, setBtnDisabled) => {
       },
     });
     setBtnDisabled(false);
-    showToast(ToastType.Warn, "Removed From Cart")
+    if(!isClear){
+      showToast(ToastType.Warn, "Removed From Cart")
+    }
     dispatch({ type: TYPE.REMOVE_FROM_CART, payload: response.data.cart });
   } catch (error) {
     console.log("error while removing item", error);

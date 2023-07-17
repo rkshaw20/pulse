@@ -32,7 +32,7 @@ const Product = () => {
 
   useEffect(() => {
     getSingleProduct(productId, setProduct, setLoader);
-  }, [productId, setLoader]);
+  }, [productId]);
 
   if (!product) {
     return <div>Loading...</div>;
@@ -61,7 +61,7 @@ const Product = () => {
     token
       ? isInCart
         ? navigate("/cart")
-        : addToCart(dataDispatch, product, token, setBtnDisabled)
+        : addToCart(dataDispatch, product, token)
       : navigate("/login", { state: { from: location?.pathname } });
 
   const addToWishlistHandler = () => {
