@@ -2,9 +2,9 @@
   /* border: 2px solid red; */
   background-color: whitesmoke;
   height: 16rem;
-  width: 23rem;
+  width: 20rem;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: .8fr 1fr;
   padding: .5rem;
   margin: 1rem;
   border-radius: 1.2rem;

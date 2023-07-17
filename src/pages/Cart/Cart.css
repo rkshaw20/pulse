@@ -25,43 +25,13 @@
   margin-top: 2rem;
 }
 
-.price-details{
-    /* border: 2px solid red; */
-    height: 100%;
-    /* display: flex;
-    flex-direction: column;
-    align-items: center; */
-    
-}
-.price-details li{
- list-style: none;
-}
-
-.price-details ul{
-    display: flex;
-    justify-content: space-between;
-    margin: 0;
-}
 
 
-.bold-style{
-    font-weight: bold;
-}
-
-.cal-price{
-    padding-right: .5rem;
-}
-
-.checkout-btn{
-    width: 75% ;
-    height: 2rem;
-    cursor: pointer;
-    border-radius: .5rem;
-    font-weight: bold;
-    font-size: medium;
-}
-
-.checkout-btn:hover{
-    background-color:#59a536 ;
-    color: white;
+@media (max-width:786px){
+    .cart-details{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }
