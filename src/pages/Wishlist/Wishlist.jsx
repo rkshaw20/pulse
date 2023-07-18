@@ -5,9 +5,8 @@ import "./Whislist.css";
 
 const Wishlist = () => {
   const { wishlist } = useDataContext();
-  console.log(wishlist);
   return (
-    <div className="whislist-page">
+    <div className="wishlist-page">
       <h2 className="wishlist-header">Wishlist ({wishlist.length})</h2>
       {!wishlist.length ? <p className="wishlist-empty-message">Your Wishlist Is Empty ! ☹️</p> :
 

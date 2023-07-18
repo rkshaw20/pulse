@@ -1,8 +1,14 @@
 
+
+
 .wishlist-container{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
-    /* margin-top: 1rem; */
-    margin:2rem;
+   
+    margin-top: 1rem; 
+    margin:1rem; 
+     display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center; 
+    align-items: center;
+    margin-bottom: 1rem;  
 }
