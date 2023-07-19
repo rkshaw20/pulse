@@ -8,7 +8,7 @@ import { TYPE } from "../../utils/constants";
 
 const Home = () => {
   const { categories } = useDataContext();
-  const { appliedFilters, dispatchFilter } = useFilterContext();
+  const {  dispatchFilter } = useFilterContext();
 
   const handleCategoryFilter = ({ categoryName }) =>{
     dispatchFilter ({type:TYPE.CLEAR_FILTER})

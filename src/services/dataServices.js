@@ -1,7 +1,6 @@
 import axios from "axios";
 import { TYPE, ToastType } from "../utils/constants";
 import { showToast } from "../utils/utils";
-import { toast } from "react-toastify";
 
 
 export const getProducts = async (setLoader, dispatch) => {

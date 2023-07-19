@@ -14,4 +14,3 @@ export const loginService= async(userData)=>{
     const {foundUser, encodedToken}=response.data;
     return {user:foundUser, token:encodedToken}}
 
-// export const add
