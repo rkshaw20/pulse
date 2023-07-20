@@ -18,6 +18,7 @@
 }
 .profile-details-header{
     display: flex;
+    align-items: center;
     justify-content: space-between;
 }
 .profile-details > p {
@@ -57,4 +58,10 @@
 
 .logout-btn button:hover {
   background-color: #d32f2f;
+}
+
+@media(max-width:786px){
+  .profile-container{
+    width: 80%;
+  }
 }

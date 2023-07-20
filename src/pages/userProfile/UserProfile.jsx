@@ -4,7 +4,6 @@ import "./UserProfile.css";
 import { useDataContext } from "../../contexts/DataContextProvider";
 import { TYPE } from "../../utils/constants";
 import { useFilterContext } from "../../contexts/FIlterContextProvider";
-import { removeFromCart } from "../../services/dataServices";
 
 const UserProfile = () => {
   const { user, setUser, setToken } = useAuthContext();
@@ -24,7 +23,7 @@ const UserProfile = () => {
     }, 500);
   };
 
-  const fullName = `${user.firstName}  ${ user.lastName}`;
+  const fullName = `${user?.firstName}  ${ user?.lastName}`;
   return (
     <div className="profile-page">
       <h2>Account</h2>
