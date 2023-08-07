@@ -28,6 +28,8 @@ Pulse is an e-commerce platform specifically designed for watch. Offering a vast
 - **Cart Management:** Add watches to your cart, review contents, adjust quantities, and remove items effortlessly.
 - **Wishlist Functionality:** Save watches to your wishlist, enabling you to keep track of desired items and make informed decisions.
 - **Secure Checkout:** Experience a seamless and secure checkout process, ensuring your payment information is protected.
+- **Payment Integration:** Payment Integration with Razorpay for a seamless checkout experience.
+
 
 ## UI Preview
 Home Page
