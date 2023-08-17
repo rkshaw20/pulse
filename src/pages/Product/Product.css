@@ -68,3 +68,11 @@
 }
 
 
+@media (max-width:786px) {
+  .single-card-container{
+    margin: 1rem auto;
+  }
+  .single-card{
+    flex-direction: column;
+  }
+}
